@@ -1,4 +1,5 @@
 # Covid19 Observer
+
 ### About
 This application displays Covid 19 data from countries all over the world. Data that are available are the following:
 * Date of Observation
@@ -7,13 +8,17 @@ This application displays Covid 19 data from countries all over the world. Data 
 * Number of Deaths
 * Number of Recovered Patients
 
+#### Data source
 Data are loaded from a csv file.
 
+#### Project structure
 The Solution file has two Projects: API and Web.
 * API project houses the Controllers, Services, DB context.
 * Web project consumes the API
+
 ### Limitations
 This application does not allow user to import CSV files, nor link to a online CSV file.
+
 ### Software
 * PostgreSQL v13.x and pgdmin 4 (installed along with PostgreSQL 13)
 * .Net 5 SDK
@@ -33,19 +38,20 @@ if not, run `cd <repo directory>/COVID19Observer/Covid19Observer.Web`
 **Do the same with the other CLI, pointing to Covid19Observer.API**
 
 Throughout the guide, I'll pertain to the CLI pointing to Covid19Observer.Web as **Web CLI**, and Covid19Observer.API as **API CLI**
-##### Project
+#### Project
 1. Clone this project
 2. Open the solution with **Visual Studio 2019**. The solution should be in the project's root folder named **COVID19Observer.sln**. The NuGet packages should be restored.
     
     If they're not, you can manually restore them yourself: In the **Solution Explorer**, right click on the **COVID19Observer solution**, and hit **Restore NuGet Packages**
 3. In your **Web CLI** : Run ``npm i``
  
-##### Initialize Database
-1. In your **API CLI** run `dotnet ef Covid19Observer.API database update`
+#### Initialize Database
+1. In your **API CLI** run `dotnet ef database update`
 
-
-### Runing the Application
-1. In your **Visual Studio 2019**, set the API project as Startup project by right clicking on the **Covid19Observer.API** Project, and clicking on the **Set as startup Project**
-    Run the API by clicking on the **Run button labelled IIS EXPRESS**
-2. In your **Web CLI** run ``npm run serve``
+### Running the Application
+1. In your **Visual Studio 2019**, set the API project as Startup project
+    1. Right click on the **Covid19Observer.API** Project
+    2. Click on the **Set as startup Project**
+2. Run the API by clicking on the **Run button labelled IIS EXPRESS**
+3. In your **Web CLI** run ``npm run serve``
 
