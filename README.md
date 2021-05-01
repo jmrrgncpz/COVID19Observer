@@ -32,7 +32,7 @@ if not, run `cd <repo directory>/COVID19Observer/Covid19Observer.Web`
 
 **Do the same with the other CLI, pointing to Covid19Observer.API**
 
-Throughout the project, I'll pertain to the CLI pointing to Covid19Observer.Web as **Web CLI**, and Covid19Observer.API as **API CLI**
+Throughout the guide, I'll pertain to the CLI pointing to Covid19Observer.Web as **Web CLI**, and Covid19Observer.API as **API CLI**
 ##### Project
 1. Clone this project
 2. Open the solution with **Visual Studio 2019**. The solution should be in the project's root folder named **COVID19Observer.sln**. The NuGet packages should be restored.
@@ -45,6 +45,7 @@ Throughout the project, I'll pertain to the CLI pointing to Covid19Observer.Web 
 
 
 ### Runing the Application
-1. In your **Visual Studio 2019**, run the API by clicking on the **Run button labelled IIS EXPRESS**
+1. In your **Visual Studio 2019**, set the API project as Startup project by right clicking on the **Covid19Observer.API** Project, and clicking on the **Set as startup Project**
+    Run the API by clicking on the **Run button labelled IIS EXPRESS**
 2. In your **Web CLI** run ``npm run serve``
 
