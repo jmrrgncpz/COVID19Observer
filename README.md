@@ -30,7 +30,9 @@ In this guide, you'll need a **CLI**. You can either use VS 2019's **Package Man
 3. In your **CLI**, navigate to **Covid19Observer.Web** root directory and run ``npm i``
  
 #### Initialize Database
-1. In your **CLI** navigate to **Covid19Observer.API** root directory and run `dotnet ef database update`
+1. In your **CLI** navigate to **Covid19Observer.API** root directory
+2. Install dotnet ef: run `dotnet tool install --global dotnet-ef`
+3. Run `dotnet ef database update`
 
 ### Running the Application
 1. In your **Visual Studio 2019**, set the API project as Startup project
