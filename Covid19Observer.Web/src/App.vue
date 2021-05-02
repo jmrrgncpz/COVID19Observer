@@ -206,9 +206,9 @@ export default Vue.extend({
   methods: {
     loadObservation() {
       if (this.isSubmitDisabled) return;
+      this.isLoadingObservations = true;
 
       const dateArray = this.getDateString(this.observationDate, "yyyy/mm/dd");
-
       fetch(
         `api/top/confirmed?date=${dateArray}&max_results=${this.maxCountResult}`
       )
