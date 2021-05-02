@@ -8,7 +8,9 @@
         <div class="navbar-start"></div>
         <div class="navbar-end">
           <h1 class="navbar-item">
-            <a href="https://jmrrgncpz.github.io">jmrrgncpz.github.io</a>
+            <a href="https://jmrrgncpz.github.io/paz-portfolio/"
+              >jmrrgncpz.github.io</a
+            >
           </h1>
         </div>
       </div>
@@ -101,19 +103,36 @@
     </div>
 
     <footer class="footer">
-      <section class="mb-6">
-        <h1 class="is-size-5">Assets attribution:</h1>
-        <a href="https://www.freepik.com/vectors/data"
-          >Data vector created by stories - www.freepik.com</a
-        >
-        <br />
-        <a href="https://www.freepik.com/vectors/website"
-          >Website vector created by stories - www.freepik.com</a
-        >
-      </section>
-      <section>
-        <h1 class="is-size-7">© 2021, Jesmer Regencia Paz</h1>
-      </section>
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <section>
+              <h1 class="is-size-5">Assets attribution:</h1>
+              <a href="https://www.freepik.com/vectors/data"
+                >Data vector created by stories - www.freepik.com</a
+              >
+              <br />
+              <a href="https://www.freepik.com/vectors/website"
+                >Website vector created by stories - www.freepik.com</a
+              >
+            </section>
+          </div>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <section class=" has-text-right">
+              <a href="https://www.linkedin.com/in/jesmer-paz-24363b159/" class="social-link mr-3 is-size-3">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/jmrrgncpz" class="social-link mb-6 is-size-3">
+                <i class="fab fa-github"></i>
+              </a>
+              <h1 class="is-size-7">© 2021, Jesmer Regencia Paz</h1>
+            </section>
+          </div>
+        </div>
+      </div>
+      <section></section>
     </footer>
   </div>
 </template>
@@ -131,6 +150,7 @@ import {
   Image,
   ToastProgrammatic as Toast,
   Tabs,
+  Icon,
 } from "buefy";
 import "buefy/dist/buefy.css";
 Vue.use(Button);
@@ -141,6 +161,7 @@ Vue.use(Checkbox);
 Vue.use(Table);
 Vue.use(Image);
 Vue.use(Tabs);
+Vue.use(Icon);
 ConfigProgrammatic.setOptions({
   defaultIconPack: "fas",
 });
@@ -179,12 +200,12 @@ export default Vue.extend({
         maxCountResult: 0,
         observationDate: null,
       },
-      jsonObservations: ""
+      jsonObservations: "",
     };
   },
   methods: {
     loadObservation() {
-      if(this.isSubmitDisabled) return;
+      if (this.isSubmitDisabled) return;
 
       const dateArray = this.getDateString(this.observationDate, "yyyy/mm/dd");
 
@@ -215,7 +236,11 @@ export default Vue.extend({
               this.observationDate,
               "mm/dd/yyyy"
             );
-            this.jsonObservations = JSON.stringify(this.observationResult, null, 4);
+            this.jsonObservations = JSON.stringify(
+              this.observationResult,
+              null,
+              4
+            );
           } else if (this.observationResult.length == 0) {
             Toast.open({
               message: "No data for that date :(",
@@ -256,10 +281,10 @@ export default Vue.extend({
     },
   },
   computed: {
-    isSubmitDisabled(){
-      return !this.observationDate || this.maxCountResult <= 0
-    }
-  }
+    isSubmitDisabled() {
+      return !this.observationDate || this.maxCountResult <= 0;
+    },
+  },
 });
 </script>
 <style>
