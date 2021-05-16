@@ -4,9 +4,10 @@
 This application displays Covid 19 confirmed cases, deaths, and recoreved patients data from countries all over the world.
 
 #### Project structure
-The Solution file has two Projects: API and Web.
+The Solution file has three Projects: API, Web, and Express.
 * API project houses the Controllers, Services, DB context.
 * Web project consumes the API
+* Express to be hosted on Heroku, serves as server as well.
 
 ### Limitations
 This application does not allow user to import CSV files, nor link to an online CSV file to change or update the data it shows.
