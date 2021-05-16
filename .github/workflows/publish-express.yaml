@@ -1,4 +1,4 @@
-name: Publish
+name: Publish express
 
 on:
   repository_dispatch:
@@ -9,7 +9,7 @@ on:
 
 defaults:
   run:
-    working-directory: Covid19Observer.Web
+    working-directory: Covid19Observer.Express
     
 jobs:
   build:
@@ -21,7 +21,6 @@ jobs:
       with:
         node-version: '14.x'
     - run: npm i
-    - run: npm run build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
