@@ -1,0 +1,13 @@
+{
+  "name": "covid19-observer.express",
+  "version": "0.0.0",
+  "description": "Covid19Observer.Express",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg-promise": "^10.10.2"
+  }
+}
