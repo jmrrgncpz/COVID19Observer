@@ -8,7 +8,7 @@
         <div class="navbar-start"></div>
         <div class="navbar-end">
           <h1 class="navbar-item">
-            <a href="https://jmrrgncpz.github.io/paz-portfolio/"
+            <a href="https://jmrrgncpz.github.io/"
               >jmrrgncpz.github.io</a
             >
           </h1>
@@ -41,6 +41,7 @@
                 v-on:keyup.native.enter="loadObservation"
               ></b-datepicker>
               <span class="help is-info">Format: mm/dd/yyyy</span>
+              <span class="help is-info">Date Hint: Available data from Jan 22 2020 up to Apr 14 2020</span>
             </div>
             <b-button
               class="is-primary is-fullwidth"
@@ -194,8 +195,8 @@ export default Vue.extend({
       isInitialLoad: true,
       isLoadingObservations: false,
       observationResult: [],
-      maxCountResult: 0,
-      observationDate: null,
+      maxCountResult: 20,
+      observationDate: new Date('2020/04/08'),
       lastRequestParameters: {
         maxCountResult: 0,
         observationDate: null,
@@ -210,7 +211,7 @@ export default Vue.extend({
 
       const dateArray = this.getDateString(this.observationDate, "yyyy/mm/dd");
       fetch(
-        `api/top/confirmed?date=${dateArray}&max_results=${this.maxCountResult}`
+        `${(process.env.VUE_APP_API_URL || '/')}api/top/confirmed?date=${dateArray}&max_results=${this.maxCountResult}`
       )
         .then((res) => {
           switch (res.status) {
