@@ -1,5 +1,8 @@
 var pgp = require('pg-promise')();
-var db = pgp('postgres://postgres:postgres@localhost:5433/COVIDCases');
+var connString = process.env.NODE_ENV == 'development'
+                    ? 'postgres://postgres:postgres@localhost:5433/COVIDCases'
+                    : process.env.DATABASE_URL
+var db = pgp(connString);
 
 const getConfirmedCases = (req, res, next) => {
     db.any(`
