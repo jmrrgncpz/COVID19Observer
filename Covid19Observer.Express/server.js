@@ -5,8 +5,8 @@ const db = require('./db.js');
 const cors = require('cors');
 const app = express();
 
-app.get('/api/top/confirmed', db.getConfirmedCases)
 app.use(cors());
+app.get('/api/top/confirmed', db.getConfirmedCases)
 app.listen(port, () => {
     console.log(`Listening to http://localhost:${port}`)
 })
