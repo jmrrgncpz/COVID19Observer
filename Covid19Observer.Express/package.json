@@ -10,5 +10,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "pg-promise": "^10.10.2"
+  },
+  "scripts": {
+    "dev": "set NODE_ENV=development&&node server.js",
+    "start": "set NODE_ENV=production&&node server.js"
   }
 }
